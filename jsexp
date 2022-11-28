@@ -1,0 +1,318 @@
+Experiment no 1:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Area of triangle, rectangle and circle</title>
+</head>
+<body>
+<div>
+<h1>Find area of triangle</h1>
+<label for="triangle1">Height</label>
+<input type="number" name="triangle1" id="trih">
+<label for="triangle2">Base</label>
+<input type="number" name="triangle2" id="trib">
+<button onclick="triArea()">Calculate Area</button>
+<h3 id="result1"></h3> </div><br><br><br>
+<div>
+<h1>Find area of rectangle</h1>
+<label for="rectangle1">Length</label>
+<input type="number" name="rectangle1" id="recl">
+<label for="rectangle2">Breadth</label>
+<input type="number" name="rectangle2" id="recb">
+<button onclick="recArea()">Calculate Area</button> <h3 id="result2"></h3>
+</div><br><br><br>
+<div>
+<h1>Find area of circle</h1>
+<label for="circle">Radius</label>
+<input type="number" name="circle" id="cirr"> <button onclick="cirArea()">Calculate Area</button>
+<h3 id="result3"></h3> </div>
+<script src="./script_exp_1.js"></script> </body>
+</html>
+ 
+ // Area of triangle
+function triArea() {
+let height = document.getElementById("trih").value; script_exp_1.js file:
+let base = document.getElementById("trib").value; let triResult = (1 / 2) * base * height;
+document.getElementById(
+"result1"
+).innerHTML = `Area of triangle: ${triResult}.`; }
+// Area of rectangle
+function recArea() {
+let length = document.getElementById("recl").value; let breadth = document.getElementById("recb").value;
+let recResult = length * breadth;
+document.getElementById(
+"result2"
+).innerHTML = `Area of rectangle: ${recResult}.`; }
+// Area of circle
+function cirArea() {
+let radius = document.getElementById("cirr").value;
+let cirResult = radius * radius * 3.14;
+document.getElementById(
+"result3"
+).innerHTML = `Area of triangle: ${cirResult}.`; }
+
+  Experiment no 2:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Multiplication table</title>
+</head>
+<body>
+<h1>Create Multiplication Table</h1>
+<input type="number" name="" id="table" placeholder="Enter Number"> <button onclick="create()">Create</button>
+<h3 id="result"></h3>
+<script src="./script_exp_2.js"></script> </body>
+</html>
+Script_exp_2.js file:
+function create() {
+let num = document.getElementById("table").value; let arr = [];
+for (let i = 1; i <= 10; i++) { arr.push(`${num} X ${i} = ${num * i}`); }
+for (let i = 0; i < arr.length; i++) { document.getElementById("result").innerHTML += ` ${arr[i]}<br>`; }
+}
+  
+  Experiment no 3:
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>String programs</title>
+</head>
+<body>
+<div>
+<h1>Reverse String</h1>
+<input type="text" id="reverse" placeholder="Enter String"> <button onclick="reverseString()">Reverse</button>
+<h3 id="result1"></h3> </div><br><br>
+<div>
+<h1>Replace characters of String</h1>
+<h2>String : Welcome to Sinhgad</h2>
+<input type="text" id="replace1" placeholder="Enter String"> <input type="text" id="replace2" placeholder="Enter String"> <button onclick="replaceString()">Replace</button>
+<h3 id="result2"></h3> </div><br><br>
+<div>
+<h1>Check Pallindrom of Strings</h1>
+<input type="text" id="string1" placeholder="Enter String"> <button onclick="checkPall()">Check</button>
+<h3 id="result3"></h3> </div>
+<script src="./script_exp_3.js"></script>
+</body> </html>
+ Script_exp_3.js file:
+
+ function reverseString() {
+let str = document.getElementById("reverse").value; let result = str.split("").reverse().join("");
+document.getElementById(
+"result1"
+).innerHTML = `Reverse of ${str}: ${result}.`; }
+function replaceString() {
+let string = "String : Welcome to Sinhgad";
+let str1 = document.getElementById("replace1").value; let str2 = document.getElementById("replace2").value;
+let result = string.replace(str1, str2);
+document.getElementById("result2").innerHTML = `Final string is: ${result}.`; }
+function checkPall() {
+let str = document.getElementById("string1").value;
+let rev = str.split("").reverse().join("");
+if (str.toLowerCase() === rev.toLowerCase()) { document.getElementById("result3").innerHTML = `The string is pallindrom.`; } else {
+document.getElementById(
+"result3"
+).innerHTML = `The string is not pallindrom.`;
+}
+}
+
+  Experiment no 4:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>String Comparison</title>
+</head> <body>
+<h1>String Comparison program</h1>
+<form onsubmit ="return false">
+<input type="text" name="string" id="string1" placeholder="Enter your string 1" onchange='saveValue(this)'>
+<input type="text" name="string" id="string2" placeholder="Enter your string 2" onchange='saveValue(this)'>
+<button onclick="strComp()">Compare Strings</button>
+</form><br><br>
+<div>
+<h3>Using '===': </h3> <h3 id="result1"></h3> </div><br><br>
+<div>
+<h3>Using localCompare(string): </h3> <h3 id="result2"></h3> </div><br><br>
+<div>
+<h3>Using includes(): </h3> <h3 id="result3"></h3> </div>
+<br><br>
+<div>
+<h3>Using RegExp(): </h3> <h3 id="result4"></h3> </div>
+<script src="./script_exp_4.js"></script> </body>
+</html>
+Script_exp_4.js file: let string1, string2
+ 
+ function strComp() {
+string1 = document.getElementById("string1").value
+string2 = document.getElementById("string2").value
+let s1 = string1.toLowerCase();
+let s2 = string2.toLowerCase();
+if(s1 === s2){
+document.getElementById("result1").innerHTML = "Strings are same" }else{
+document.getElementById("result1").innerHTML = "Strings are not same" }
+let s3 = string1.localeCompare(string2)
+if(s3 === 0){
+document.getElementById("result2").innerHTML = "Strings are same" }else{
+document.getElementById("result2").innerHTML = "Strings are not same" }
+let result = s1.includes(s2);
+if(result){
+document.getElementById("result3").innerHTML = "Strings are same" }else{
+document.getElementById("result3").innerHTML = "Strings are not same" }
+let pattern = new RegExp(string1, 'gi')
+result2 = pattern.test(string2)
+if(result2){
+document.getElementById("result4").innerHTML = "Strings are same" }else{
+document.getElementById("result4").innerHTML = "Strings are not same" }
+}
+
+ Experiment no 5:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Countdown Timer</title>
+</head>
+<body>
+<h1>Countdown Timer</h1>
+<input type="datetime-local" name="" id="timer"> <button onclick="startTimer()">Start Timer</button>
+<h3 id="result"></h3>
+<script src="./script_exp_5.js"></script> </body>
+</html>
+Script_exp_5.js file:
+function startTimer() {
+let x = setInterval(function () {
+let countDownDate = document.getElementById("timer").value; let timer = new Date(countDownDate);
+let now = new Date().getTime();
+let distance = timer - now;
+let days = Math.floor(distance / (1000 * 60 * 60 * 24)); let hours = Math.floor(
+(distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60) );
+let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)); let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+document.getElementById("result").innerHTML = ` Timer will end in ${days} d : ${hours} h : ${minutes} m : ${seconds} s`;
+if (distance < 0) {
+clearInterval(x); document.getElementById("result").innerHTML = "EXPIRED"; }
+}, 1000);}
+  
+  Experiment no 6:
+
+<!DOCTYPE html> <html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>JS Array Practical</title>
+</head>
+<body>
+<h1>Javascript Array Programs</h1>
+<h3 id="array"></h3>
+<label for="no_remove">Enter number to remove element from array: </label> <input type="number" name="no_remove" id="no_remove">
+<button onclick="remove()">Remove Element</button>
+<br><br>
+<label for="no_search">Enter number to search in the array: </label>
+<input type="number" name="no_search" id="no_search">
+<button onclick="search()">Search Element</button>
+<br><br>
+<button onclick="empty()">Empty array</button>
+<h2 id="result"></h2>
+<script src="./script_exp_6.js"></script> </body>
+</html>
+Script_exp_6.js file:
+const removeArray = (num, array) =>{ let index = array.indexOf(num) if(index !== -1){
+array.splice(index,1) console.log(array)
+return `Element is removed successfuly form index ${index}` }else{
+return "Element not found....."
+}
+}
+const searchArray = (num, array) =>{
+let index = array.indexOf(num)
+if(index !== -1){
+return `Element is present at index ${index}!` }else{
+return "Element not found....."}}
+ 
+ const emptyArray = (array) =>{ array.splice(0, array.length) console.log(array)}
+let array = [2, 5, 6, 9, 20, 17] console.log(array)
+let numToRemove, numToSearch;
+let htmlText = document.getElementById("array").innerHTML = `Array : [${array}]`
+const remove = () =>{
+numToRemove = document.getElementById("no_remove").value if(numToRemove.length === 0){
+alert("Please enter some number....");
+}else{
+let result = removeArray(Number(numToRemove), array) document.getElementById("result").innerHTML = `${result}`
+}}
+const search = () =>{
+numToSearch = document.getElementById("no_search").value if(numToSearch.length === undefined){
+alert("Please enter some number.....");
+}else{
+let result = searchArray(Number(numToSearch), array) document.getElementById("result").innerHTML = `${result}` }}
+const empty = () =>{
+emptyArray(array); document.getElementById("result").innerHTML = "Array is empty." }
+
+  Experiment no 7:
+
+let arr = [];
+let obj1 = {
+name: "Nidi Patil", age: 21,
+College: "SCOE", RollNo: 23,
+};
+arr.push(obj1); console.log(arr);
+let obj2 = {
+name: "Sandhya Goykar", age: 21,
+College: "SCOE", RollNo: 40,
+};
+arr.unshift(obj2); console.log(arr);
+let obj3 = {
+name: "Sakshi Sharma", age: 21,
+College: "SCOE", RollNo: 61,
+};
+arr.push(obj3); console.log(arr);
+console.log(Array.isArray(arr));
+ 
+  Experiment no 8:
+
+<!DOCTYPE html> <html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Mouse Event</title>
+</head>
+<style>
+#home {
+height: 70vh;
+width: 100%; text-align: center; border: 1px solid black; }
+.second { height: 40vh; width: 100%; display: flex; }
+#second_1 {
+height: 40vh;
+width: 50%;
+text-align: center; border: 1px solid black; }
+.second_2 {
+height: 40vh;
+width: 50%;
+text-align: center; border: 1px solid black; }
+</style>
+<body>
+<div id="home" onmouseover="changeBgColor()">
+<h1>Home Page</h1>
+</div>
+<div class="second">
+<div id="second_1" onclick="changeFocus()" onBlur="iBlur();"> <h3>Sub_div_1</h3>
+</div>
+<div class="second_2">
+ 
+<h3>Sub_div_2</h3> </div>
+</div>
+<script>
+function changeBgColor() {
+let element = document.getElementById("home") element.style.backgroundColor = "#87CEEB";
+}
+function changeFocus() {
+let element = document.getElementById("second_1") element.style.backgroundColor = "#90EE90";
+}
+</script>
+</body>
+</html>
